@@ -4,6 +4,7 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login'
 import Debits from './components/Debits'
+import Credits from './components/Credits'
 import axios from "axios";
 
 
@@ -68,6 +69,9 @@ class App extends Component {
       <Debits debits = {this.state.debits}/>
     )
 
+    const CreditComponent = () => (
+      <Credits credits = {this.state.credits}/>
+    )
     return (
         <Router>
           <div>
@@ -75,6 +79,7 @@ class App extends Component {
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/debits" render={DebitComponent}/>
+            <Route exact path="/credits" render={CreditComponent}/>
           </div>
         </Router>
     );
