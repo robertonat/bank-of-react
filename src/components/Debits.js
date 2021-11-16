@@ -9,13 +9,16 @@ const Debits = (props) => {
             return <li key={debit.id}>{debit.amount} {debit.description} {date}</li>
         })
     }
+
+
+
     return (
     	<div>
     	   <h1>Debits</h1>
     	   {debitsView()}
            <form onSubmit={props.addDebit}>
              <input type="text" name="description" />
-             <input type="number" name="amount" />
+             <input type="number" name="amount" step=".01" />
              <button type="submit">Add Debit</button>
 
            </form>
