@@ -58,12 +58,28 @@ class App extends Component {
     //updates state based off user input
     e.preventDefault();
     const today = new Date()
+    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
     const description  = e.target[0].value;
     const amount  = Number(e.target[1].value);
-    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    //const date = String(2021)+ "-"+ String(11) + "-" + String(16)
+
     const newDebit = {id: this.state.debits.length, amount: amount, description: description, date:date}
     this.setState({accountBalance: this.state.accountBalance - amount, debitSum: this.state.debitSum+amount, debits: [newDebit, ...this.state.debits]})
+
+  }
+
+  addCredit = (e) => {
+    //send to debits view via props
+    //updates state based off user input
+    e.preventDefault();
+    const today = new Date()
+    const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+
+    const description  = e.target[0].value;
+    const amount  = Number(e.target[1].value);
+
+    const newCredit = {id: this.state.credits.length, amount: amount, description: description, date:date}
+    this.setState({accountBalance: this.state.accountBalance + amount, creditSum: this.state.creditSum+amount, credits: [newCredit, ...this.state.credits]})
 
   }
 
@@ -72,6 +88,7 @@ class App extends Component {
   render() {
 
     const {debits} = this.state;
+    const {credits} = this.state;
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
 
     const UserProfileComponent = () => (
@@ -82,9 +99,9 @@ class App extends Component {
       <LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} />
     );
 
-    const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} />);
+    const DebitsComponent = () => (<Debits addDebit={this.addDebit} debits={debits} accountBalance={this.state.accountBalance}/>);
 
-    const CreditComponent = () => (<Credits credits = {this.state.credits}/>);
+    const CreditsComponent = () => (<Credits addCredit={this.addCredit} credits={credits} accountBalance={this.state.accountBalance} />);
 
     return (
         <Router>
@@ -93,7 +110,7 @@ class App extends Component {
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/debits" render={DebitsComponent}/>
-            <Route exact path="/credits" render={CreditComponent}/>
+            <Route exact path="/credits" render={CreditsComponent}/>
           </div>
         </Router>
     );
