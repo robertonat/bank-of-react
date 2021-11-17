@@ -1,7 +1,10 @@
+import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import AccountBalance from './AccountBalance';
 
 
 const Credits = (props) => {
+	document.title = "Credits"
 	let creditsView = () => {
         const { credits } = props;
         return credits.map((credit) => {
@@ -10,16 +13,18 @@ const Credits = (props) => {
         })
     }
     return (
+
     	<div>
     	   <h1>Credits</h1>
     	   {creditsView()}
            <form onSubmit={props.addCredit}>
              <input type="text" name="description" />
-             <input type="number" name="amount" />
+             <input type="number" name="amount" step=".01" />
              <button type="submit">Add Credit</button>
 
            </form>
 					 <Link to="/">Return to Home</Link>
+					 <h3>Balance:{Math.round(props.accountBalance*100)/100}</h3>
     	</div>
 
     )
