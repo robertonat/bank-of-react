@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.banner {
+  padding: 40px;
+  text-align: center;
+  background: #2FBD2A;
+  color: white;
+  font-size: 25px;
+}
+
+.interface {
+  text-align: center;
+}
