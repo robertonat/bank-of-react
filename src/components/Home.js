@@ -16,16 +16,16 @@ class Home extends Component {
           </div>
 
           <div class ="interface">
-            <Link to="/login">log in</Link>
+            <Link to="/bank-of-react/login">log in</Link>
             <br></br>
-            <Link to="/userProfile">User Profile</Link>
+            <Link to="/bank-of-react/userProfile">User Profile</Link>
             <AccountBalance accountBalance={this.props.accountBalance}/>
-            <Link to="/debits">debits</Link>    |   <Link to="/credits">credits</Link>
+            <Link to="/bank-of-react/debits">debits</Link>    |   <Link to="/bank-of-react/credits">credits</Link>
             <br></br>
             <br></br>
             <img src={icon} alt="bank" style={{alignSelf: 'center'}} />
           </div>
-          
+
         </div>
     );
   }

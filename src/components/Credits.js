@@ -22,7 +22,7 @@ const Credits = (props) => {
 
            </form>
 					 <h2><AccountBalance accountBalance={props.accountBalance}/></h2>
-					 <Link to="/">Return to Home</Link>
+					 <Link to="/bank-of-react">Return to Home</Link>
 			</div>
 
     )
