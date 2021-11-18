@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom';
-
 import AccountBalance from './AccountBalance';
 
 const Debits = (props) => {
-document.title = "Debits"
+	document.title = "Debits"
 	let debitsView = () => {
         const { debits } = props;
         return debits.map((debit) => {
