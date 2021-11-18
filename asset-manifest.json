@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/bank-of-react/static/css/main.c13680f7.chunk.css",
+    "main.js": "/bank-of-react/static/js/main.9f457894.chunk.js",
+    "main.js.map": "/bank-of-react/static/js/main.9f457894.chunk.js.map",
+    "runtime-main.js": "/bank-of-react/static/js/runtime-main.eec89178.js",
+    "runtime-main.js.map": "/bank-of-react/static/js/runtime-main.eec89178.js.map",
+    "static/js/2.b3b351eb.chunk.js": "/bank-of-react/static/js/2.b3b351eb.chunk.js",
+    "static/js/2.b3b351eb.chunk.js.map": "/bank-of-react/static/js/2.b3b351eb.chunk.js.map",
+    "static/js/3.e7a75891.chunk.js": "/bank-of-react/static/js/3.e7a75891.chunk.js",
+    "static/js/3.e7a75891.chunk.js.map": "/bank-of-react/static/js/3.e7a75891.chunk.js.map",
+    "index.html": "/bank-of-react/index.html",
+    "static/css/main.c13680f7.chunk.css.map": "/bank-of-react/static/css/main.c13680f7.chunk.css.map",
+    "static/js/2.b3b351eb.chunk.js.LICENSE.txt": "/bank-of-react/static/js/2.b3b351eb.chunk.js.LICENSE.txt",
+    "static/media/FirstBankofSpringfield.1d835858.png": "/bank-of-react/static/media/FirstBankofSpringfield.1d835858.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eec89178.js",
+    "static/js/2.b3b351eb.chunk.js",
+    "static/css/main.c13680f7.chunk.css",
+    "static/js/main.9f457894.chunk.js"
+  ]
+}
