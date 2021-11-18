@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login'
 import Debits from './components/Debits'
 import Credits from './components/Credits'
-import axios from "axios";
 import './App.css'
-
+import axios from "axios";
 
 class App extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       accountBalance: 0,
       debits: [],
@@ -22,18 +20,18 @@ class App extends Component {
         userName: 'Homer_Simpson',
         memberSince: '07/23/96',
       }
-    }
 
+    }
   }
 
   async componentDidMount() {
     let debits = await axios.get("https://moj-api.herokuapp.com/debits")
     let credits = await axios.get("https://moj-api.herokuapp.com/credits")
-
     //get data from API response
     debits = debits.data
     credits = credits.data
 
+    //calculates debit and credit totals
     let debitSum = 0, creditSum = 0;
     debits.forEach((debit) => {
       debitSum += debit.amount
@@ -41,6 +39,7 @@ class App extends Component {
     credits.forEach((credit) => {
       creditSum += credit.amount
     })
+    //calculates balance and sets it as well as credit sum and debit
     let accountBalance = creditSum - debitSum;
     this.setState({debits, credits, accountBalance});
   }
@@ -57,33 +56,34 @@ class App extends Component {
     //send to debits view via props
     //updates state based off user input
     e.preventDefault();
-    const today = new Date()
+    // gets the current date and formats it
+    const today = new Date();
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
+    //isolates the description and amount from the passed input
     const description  = e.target[0].value;
     const amount  = Number(e.target[1].value);
-
+    //creates a new debit object from the passed values
     const newDebit = {id: this.state.debits.length, amount: amount, description: description, date:date}
+    //updates account balance, the debit sum and adds the newdebit to the list
     this.setState({accountBalance: this.state.accountBalance - amount, debitSum: this.state.debitSum+amount, debits: [newDebit, ...this.state.debits]})
-
   }
 
   addCredit = (e) => {
     //send to debits view via props
     //updates state based off user input
     e.preventDefault();
+    // gets the current date and formats it
     const today = new Date()
     const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-
+    //isolates the description and amount from the passed input
     const description  = e.target[0].value;
     const amount  = Number(e.target[1].value);
-
+    //creates a new debit object from the passed values
     const newCredit = {id: this.state.credits.length, amount: amount, description: description, date:date}
+    //updates account balance, the debit sum and adds the newdebit to the list
     this.setState({accountBalance: this.state.accountBalance + amount, creditSum: this.state.creditSum+amount, credits: [newCredit, ...this.state.credits]})
 
   }
-
-
 
   render() {
 
@@ -105,13 +105,13 @@ class App extends Component {
 
     return (
         <Router>
-          <div>
+          <Switch>
             <Route exact path="/" render={HomeComponent}/>
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/debits" render={DebitsComponent}/>
             <Route exact path="/credits" render={CreditsComponent}/>
-          </div>
+          </Switch>
         </Router>
     );
 
