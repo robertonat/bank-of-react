@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-
+import AccountBalance from './AccountBalance';
 
 
 const Credits = (props) => {
@@ -23,7 +23,7 @@ const Credits = (props) => {
 
            </form>
 					 <Link to="/">Return to Home</Link>
-					 <h3>Balance:{Math.round(props.accountBalance*100)/100}</h3>
+					 <h2><AccountBalance accountBalance={props.accountBalance}/></h2>
     	</div>
 
     )

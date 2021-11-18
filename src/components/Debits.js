@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom';
 
+import AccountBalance from './AccountBalance';
 
 const Debits = (props) => {
 document.title = "Debits"
@@ -22,8 +23,8 @@ document.title = "Debits"
              <button type="submit">Add Debit</button>
 
            </form>
-					 <h1>Balance:{Math.round(props.accountBalance*100)/100}</h1>
 
+					 <h2><AccountBalance accountBalance={props.accountBalance}/></h2>
 					 <Link to="/">Return to Home</Link>
 
     	</div>
