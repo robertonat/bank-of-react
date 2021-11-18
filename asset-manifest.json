@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/bank-of-react/static/css/main.c13680f7.chunk.css",
-    "main.js": "/bank-of-react/static/js/main.a9382d03.chunk.js",
-    "main.js.map": "/bank-of-react/static/js/main.a9382d03.chunk.js.map",
+    "main.js": "/bank-of-react/static/js/main.d78c5cdf.chunk.js",
+    "main.js.map": "/bank-of-react/static/js/main.d78c5cdf.chunk.js.map",
     "runtime-main.js": "/bank-of-react/static/js/runtime-main.eec89178.js",
     "runtime-main.js.map": "/bank-of-react/static/js/runtime-main.eec89178.js.map",
     "static/js/2.b3b351eb.chunk.js": "/bank-of-react/static/js/2.b3b351eb.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.eec89178.js",
     "static/js/2.b3b351eb.chunk.js",
     "static/css/main.c13680f7.chunk.css",
-    "static/js/main.a9382d03.chunk.js"
+    "static/js/main.d78c5cdf.chunk.js"
   ]
 }
