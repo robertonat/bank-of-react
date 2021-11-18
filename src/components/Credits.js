@@ -1,7 +1,6 @@
 import {Link} from 'react-router-dom';
 import AccountBalance from './AccountBalance';
 
-
 const Credits = (props) => {
 	document.title = "Credits"
 	let creditsView = () => {
@@ -22,9 +21,9 @@ const Credits = (props) => {
              <button type="submit">Add Credit</button>
 
            </form>
-					 <Link to="/">Return to Home</Link>
 					 <h2><AccountBalance accountBalance={props.accountBalance}/></h2>
-    	</div>
+					 <Link to="/">Return to Home</Link>
+			</div>
 
     )
 }
